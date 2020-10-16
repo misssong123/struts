@@ -87,8 +87,5 @@ public class DoubleLinkedList {
         doubleLinkedList.del(3);
         System.out.println("删除后的链表情况~~");
         doubleLinkedList.list();
-
-
-
     }
 }
