@@ -55,16 +55,18 @@ public class SingleLinkedList {
             System.out.println("链表为空~");
             return;
         }
-        Hero temp = head;
-        while (temp.next != null){
-            if (temp.next.no == newHero.no){
-                newHero.next = temp.next.next;
-                temp.next = newHero;
+        Hero temp = head.next;
+        boolean flag = false;
+        while (temp!=null){
+            if (temp.no == newHero.no){
+                temp.nickname = newHero.nickname;
+                temp.name = newHero.name;
+                flag = true;
                 break;
             }
             temp = temp.next;
         }
-        if (temp.next == null)
+        if (!flag)
             System.out.println("未找到该对象");
     }
     /**
