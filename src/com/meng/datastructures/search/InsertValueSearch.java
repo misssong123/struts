@@ -10,7 +10,6 @@ public class InsertValueSearch {
     //编写插值查找算法
     //说明：插值查找算法，也要求数组是有序的
     /**
-     *
      * @param arr 数组
      * @param left 左边索引
      * @param right 右边索引
