@@ -55,6 +55,20 @@ public class BinaryTree {
             return null;
         }
     }
+    //删除结点
+    public void delNode(int no) {
+        if(root != null) {
+            //如果只有一个root结点, 这里立即判断root是不是就是要删除结点
+            if(root.getNo() == no) {
+                root = null;
+            } else {
+                //递归删除
+                root.delNode(no);
+            }
+        }else{
+            System.out.println("空树，不能删除~");
+        }
+    }
     public static void main(String[] args) {
         //先需要创建一颗二叉树
         BinaryTree binaryTree = new BinaryTree();
