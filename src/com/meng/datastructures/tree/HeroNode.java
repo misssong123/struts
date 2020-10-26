@@ -150,5 +150,39 @@ public class HeroNode {
         }
         return resNode;
     }
+    //递归删除结点
+    //1.如果删除的节点是叶子节点，则删除该节点
+    //2.如果删除的节点是非叶子节点，则删除该子树
+    public void delNode(int no) {
+
+        //思路
+		/*
+		 * 	1. 因为我们的二叉树是单向的，所以我们是判断当前结点的子结点是否需要删除结点，而不能去判断当前这个结点是不是需要删除结点.
+			2. 如果当前结点的左子结点不为空，并且左子结点 就是要删除结点，就将this.left = null; 并且就返回(结束递归删除)
+			3. 如果当前结点的右子结点不为空，并且右子结点 就是要删除结点，就将this.right= null ;并且就返回(结束递归删除)
+			4. 如果第2和第3步没有删除结点，那么我们就需要向左子树进行递归删除
+			5.  如果第4步也没有删除结点，则应当向右子树进行递归删除.
+
+		 */
+        //2. 如果当前结点的左子结点不为空，并且左子结点 就是要删除结点，就将this.left = null; 并且就返回(结束递归删除)
+        if(this.left != null && this.left.no == no) {
+            this.left = null;
+            return;
+        }
+        //3.如果当前结点的右子结点不为空，并且右子结点 就是要删除结点，就将this.right= null ;并且就返回(结束递归删除)
+        if(this.right != null && this.right.no == no) {
+            this.right = null;
+            return;
+        }
+        //4.我们就需要向左子树进行递归删除
+        if(this.left != null) {
+            this.left.delNode(no);
+        }
+        //5.则应当向右子树进行递归删除
+        if(this.right != null) {
+            this.right.delNode(no);
+        }
+    }
+
 
 }
