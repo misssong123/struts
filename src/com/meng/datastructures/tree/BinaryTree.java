@@ -31,7 +31,30 @@ public class BinaryTree {
             System.out.println("二叉树为空，无法遍历");
         }
     }
-
+    //前序查找
+    public HeroNode preOrderSearch(int no) {
+        if(root != null) {
+            return root.preOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+    //中序查找
+    public HeroNode infixOrderSearch(int no) {
+        if(root != null) {
+            return root.infixOrderSearch(no);
+        }else {
+            return null;
+        }
+    }
+    //后序查找
+    public HeroNode postOrderSearch(int no) {
+        if(root != null) {
+            return this.root.postOrderSearch(no);
+        }else {
+            return null;
+        }
+    }
     public static void main(String[] args) {
         //先需要创建一颗二叉树
         BinaryTree binaryTree = new BinaryTree();
