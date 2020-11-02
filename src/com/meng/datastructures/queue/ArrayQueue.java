@@ -8,18 +8,20 @@ import java.util.Scanner;
  */
 public class ArrayQueue {
     //队伍的后端
-    int rear = -1;
+    int rear ;
     //队伍的前端
-    int front = -1;
+    int front ;
     //存放数据的数组
     int [] queue = null;
     //队列大小
-    int size = 0;
+    int size ;
     public ArrayQueue(){
         //默认设置为10
         this(10);
     }
     public ArrayQueue(int size){
+        this.rear = -1;
+        this.front = -1;
         this.size = size;
         queue = new int[size];
     }
